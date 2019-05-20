@@ -1,0 +1,11 @@
+*.pyc
+output/
+*_epochs.py
+*~
+*.vscode
+*.pylintrc
+pre_train/
+test_saved_models/
+models/
+mae_mse/
+saved_models/
