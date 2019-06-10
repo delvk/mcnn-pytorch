@@ -34,13 +34,13 @@ def main():
     log_dir = './mae_mse/'
     checkpoint_dir = './checkpoint/'
 
-    train_path = '/home/khuong/Desktop/Projects/python/dataset/crowd_counting/SH_B/train/images'
-    train_gt_path = '/home/khuong/Desktop/Projects/python/dataset/crowd_counting/SH_B/train/ground_truth'
-    val_path = '/home/khuong/Desktop/Projects/python/dataset/crowd_counting/SH_B/val/images'
-    val_gt_path = '/home/khuong/Desktop/Projects/python/dataset/crowd_counting/SH_B/val/ground_truth'
+    train_path = '/home/jake/Desktop/Projects/Python/dataset/SH_B/cooked/train/images'
+    train_gt_path = '/home/jake/Desktop/Projects/Python/dataset/SH_B/cooked/train/ground_truth'
+    val_path = '/home/jake/Desktop/Projects/Python/dataset/SH_B/cooked/val/images'
+    val_gt_path = '/home/jake/Desktop/Projects/Python/dataset/SH_B/cooked/val/ground_truth'
 
     # last checkpoint
-    checkpointfile = os.path.join(checkpoint_dir, 'checkpoint.74.pth.tar')
+    checkpointfile = os.path.join(checkpoint_dir, 'checkpoint.94.pth.tar')
 
     # some description
     method = 'mcnn'
@@ -52,7 +52,7 @@ def main():
 
     # Training configuration
     start_epoch = 0
-    end_epoch = 2000
+    end_epoch = 97
     lr = 0.00001
     # momentum = 0.9
     disp_interval = 1000
@@ -152,7 +152,7 @@ def main():
                 re_cnt = False
 
         # Save checkpoint
-        state = {'epoch': this_epoch + 1, 'state_dict': net.state_dict(),
+        state = {'epoch': this_epoch, 'state_dict': net.state_dict(),
                  'optimizer': optimizer.state_dict()}
         cp_filename = "checkpoint.{}.pth.tar".format(this_epoch)
         torch.save(state, os.path.join(checkpoint_dir, cp_filename))
